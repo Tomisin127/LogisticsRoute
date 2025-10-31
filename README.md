@@ -79,7 +79,10 @@ Supported Commands:Plan Delivery: "Arrange a delivery from [origin] to [destinat
 Report Incident: "Report an issue on the route from [origin] to [destination]", e.g., "Report incident from NY to CA severity 3 note Road closure".
 List Shipments: "List shipments" or "Show me all deliveries".
 
+
 ![1001235553](https://github.com/user-attachments/assets/cc8bb056-6214-4281-8a34-7109642f91e1)
+
+
 
 Note: The agent uses an LLM to parse natural language, so variations like "ship" or "schedule" are supported. Use US state abbreviations or city names for locations.
 
