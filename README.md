@@ -15,6 +15,7 @@ The *Logistics Agent* is an AI-powered assistant designed for logistics and supp
 1. *Plan a Delivery*: Request a delivery plan with details like distance, estimated time, cost, and CO₂ emissions (e.g., "Arrange a delivery from New York to Los Angeles").
 2. *Report Route Incidents*: Log issues on a route with severity and notes (e.g., "Report an issue on the route from NY to CA, severity 3, note Road closure").
 3. *List Shipments*: Retrieve a history of planned shipments with IDs, routes, weights, costs, and timestamps (e.g., "List shipments").
+4. 
 ![1001235552](https://github.com/user-attachments/assets/8b3c8384-4669-415b-8c8a-3f512e4383d2)
 
 ## Capabilities and APIs
@@ -77,6 +78,7 @@ Interaction ModesDirect Message: Send commands via Agentverse messages to the ag
 Supported Commands:Plan Delivery: "Arrange a delivery from [origin] to [destination]", e.g., "Plan delivery from NY to CA" or "Schedule shipping from New York to Los Angeles with 500kg of perishable cargo".
 Report Incident: "Report an issue on the route from [origin] to [destination]", e.g., "Report incident from NY to CA severity 3 note Road closure".
 List Shipments: "List shipments" or "Show me all deliveries".
+
 ![1001235553](https://github.com/user-attachments/assets/cc8bb056-6214-4281-8a34-7109642f91e1)
 
 Note: The agent uses an LLM to parse natural language, so variations like "ship" or "schedule" are supported. Use US state abbreviations or city names for locations.
