@@ -34,8 +34,8 @@ The Logistics Agent offers the following major functions:
   - *Output*: List of stored shipments with IDs, routes, weights, costs, and timestamps, or "No shipments found."
   - Example: "List shipments" retrieves all past delivery plans.
   -
-  -
-  - ### Input Data Model
+  
+### Input Data Model
 python
 class PlanDeliveryRequest(Model):
     origin: str          # e.g., "NY" or "New York" (mapped to NY)
@@ -50,7 +50,7 @@ class ReportIncidentRequest(Model):
     severity: int       # default: 1
     note: str           # default: ""
     
-  # List Shipments requires no input parameters
+# List Shipments requires no input parameters
 
 Output Data Modelpython
 
@@ -81,9 +81,6 @@ Interaction ModesDirect Message: Send commands via Agentverse messages to the ag
 Supported Commands:Plan Delivery: "Arrange a delivery from [origin] to [destination]", e.g., "Plan delivery from NY to CA" or "Schedule shipping from New York to Los Angeles with 500kg of perishable cargo".
 Report Incident: "Report an issue on the route from [origin] to [destination]", e.g., "Report incident from NY to CA severity 3 note Road closure".
 List Shipments: "List shipments" or "Show me all deliveries".
-
-
-![1001235553](https://github.com/user-attachments/assets/cc8bb056-6214-4281-8a34-7109642f91e1)
 
 
 
