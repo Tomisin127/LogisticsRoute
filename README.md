@@ -81,73 +81,110 @@ class ListShipmentsResponse(Model):
     shipments: List[Shipment]  # List of shipment objects or empty list
     # Shipment: {id: str, origin: str, dest: str, weight_kg: float, cost_usd: float, ts: str}
 ```
-Interaction Modes
-
-Direct Message: Send commands via Agentverse messages to the agent’s address:
-agent1qg9xyclyvxcmkrjp0qm6lcjdsh23wm86dcampwm7gucqjrdjyyxpg36trgx or @LogisticsRoute.
-
-Supported Commands:
-
-Plan Delivery: "Arrange a delivery from [origin] to [destination]"
-
-Report Incident: "Report incident from NY to CA severity 3 note Road closure"
-
-List Shipments: "List shipments" or "Show me all deliveries"
+![1001235552](https://github.com/user-attachments/assets/e53ebe84-8c1e-4cae-8ea7-4d7988e3a487)
 
 
-Note: The agent uses an LLM to parse natural language, so variations like "ship" or "schedule" are supported. Use US state abbreviations or city names for locations.
+### Interaction Modes
 
-Limitations and Scope
+**Direct Message**:  
+Send commands via Agentverse messages to the agent’s address:  
+`agent1qg9xyclyvxcmkrjp0qm6lcjdsh23wm86dcampwm7gucqjrdjyyxpg36trgx` or @LogisticsRoute.
 
-Geographic Scope: US states/cities only.
+#### Supported Commands
 
-Command Parsing: Invalid commands return "Please use a valid command."
+- **Plan Delivery**  
+  `"Arrange a delivery from [origin] to [destination]"`  
+  Example: `"Plan delivery from NY to CA"`  
+  Example (advanced): `"Schedule shipping from New York to Los Angeles with 500kg of perishable cargo"`  
 
-Response Issue: Possible mailbox/uagents library responses may fail.
+- **Report Incident**  
+  `"Report an issue on the route from [origin] to [destination]"`  
+  Example: `"Report incident from NY to CA severity 3 note Road closure"`  
 
-External APIs: Depends on OpenRouteService + ASI API.
+- **List Shipments**  
+  `"List shipments"`  
+  or  
+  `"Show me all deliveries"`  
 
-Not Supported: International shipping, real-time tracking, weather queries.
+> *Note*: The agent uses an LLM to parse natural language, so synonyms like "ship", "schedule", "send cargo" are supported.
 
+---
 
-Usage Guidelines
+### Limitations and Scope
 
-Send commands to the agent’s address.
+- **Geographic Scope**:  
+  Limited to US states & major cities (e.g., Los Angeles → CA).
 
-Use natural language or structured commands.
+- **Command Parsing**:  
+  Invalid commands (e.g., `"hello"`) return:  
+  `"Please use a valid command."`
 
-If no response, enable debug logs and verify Agentverse connectivity.
+- **Response Issue**:  
+  The agent may sometimes receive messages but fail to respond due to mailbox or `uagents` library issues. Verify connectivity with Agentverse.
 
-Test with "list shipments" to confirm connectivity.
+- **External APIs**:  
+  Depends on OpenRouteService + ASI API. Failures may cause fallback routes or error messages.
 
+- **Not Supported**:  
+  ❌ international shipping  
+  ❌ real-time GPS tracking  
+  ❌ non-logistics tasks (weather, news, etc.)
 
-Licensing
+---
 
-MIT License. Contact the developer for commercial licensing inquiries.
+### Usage Guidelines
 
-Contact Information
+- **Send Commands**:  
+  Use the agent’s address shown above via Agentverse.
 
-Developer: https://x.com/paulraimi11
-Email: paul.raimi.pr@gmail.com
-Agentverse Profile: https://agentverse.ai/agents/details/agent1qg9xyclyvxcmkrjp0qm6lcjdsh23wm86dcampwm7gucqjrdjyyxpg36trgx/profile
+- **Command Format**:  
+  Natural language (`"Arrange a delivery from New York to Los Angeles"`)  
+  or structured (`"plan delivery from NY to CA weight 500"`)
 
-Acknowledgments
+- **Debugging Responses**:  
+  If nothing returns:
+  1. Check logs (`LOG_LEVEL="DEBUG"`)
+  2. Verify Agentverse connectivity:
+     ```
+     curl -I https://agentverse.ai
+     ```
 
-Built using the uagents library
+- **Testing**:  
+  Start with `"List shipments"` because it avoids external API dependencies.
 
-Powered by ASI:One
+---
 
-Utilizes OpenRouteService API
+### Licensing
 
+This agent is developed for personal and professional use under the MIT License.  
+For commercial licensing inquiries, contact the developer.
 
-Keywords and Tags
+---
 
-Logistics
-Supply Chain
-Delivery Planning
-Incident Reporting
-Shipment Tracking
-Route Optimization
-CO₂ Emissions
+### Contact Information
+
+**Developer (X)**: https://x.com/paulraimi11  
+**Email**: paul.raimi.pr@gmail.com  
+**Agentverse Profile**:  
+https://agentverse.ai/agents/details/agent1qg9xyclyvxcmkrjp0qm6lcjdsh23wm86dcampwm7gucqjrdjyyxpg36trgx/profile
+
+---
+
+### Acknowledgments
+
+- Built using the **uagents** library for agent communication
+- Powered by **ASI:One** for LLM-based command parsing
+- Uses **OpenRouteService API** for route distance calculations
+
+---
+
+### Keywords and Tags
+
+Logistics  
+Supply Chain  
+Delivery Planning  
+Incident Reporting  
+Shipment Tracking  
+Route Optimization  
+CO₂ Emissions  
 US Logistics
-
