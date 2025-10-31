@@ -79,8 +79,7 @@ class ReportIncidentResponse(Model):
 
 class ListShipmentsResponse(Model):
     shipments: List[Shipment]  # List of shipment objects or empty list
-    # Shipment: {id: str, origin: str, dest: str, weight_kg: float, cost_usd: float, ts: str}
-
+    # Shipment: {id: str, origin: str, dest: str, weight_kg: float, cost_usd: float, ts: str}```
 Interaction Modes
 
 Direct Message: Send commands via Agentverse messages to the agent’s address:
