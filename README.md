@@ -33,11 +33,9 @@ The Logistics Agent offers the following major functions:
   - *Input*: None.
   - *Output*: List of stored shipments with IDs, routes, weights, costs, and timestamps, or "No shipments found."
   - Example: "List shipments" retrieves all past delivery plans.
-
-
-
-
-### Input Data Model
+  -
+  -
+  - ### Input Data Model
 python
 class PlanDeliveryRequest(Model):
     origin: str          # e.g., "NY" or "New York" (mapped to NY)
@@ -51,10 +49,8 @@ class ReportIncidentRequest(Model):
     destination: str    # e.g., "CA"
     severity: int       # default: 1
     note: str           # default: ""
-
-
-
-# List Shipments requires no input parameters
+    
+  # List Shipments requires no input parameters
 
 Output Data Modelpython
 
