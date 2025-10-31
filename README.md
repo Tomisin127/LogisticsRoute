@@ -1,7 +1,9 @@
 <img width="1024" height="1024" alt="1001224629" src="https://github.com/user-attachments/assets/3274020a-968d-41df-832a-24f0435e8c49" />
 # LogisticsRoute
 Logistics Route: An AI-powered agent for logistics and supply chain management, enabling users to plan deliveries, report route incidents, and list shipments using natural language commands. It provides route details, cost estimates, CO₂ emissions, and risk assessments for US-based logistics operations.
+
 ![tag:innovationlab](https://img.shields.io/badge/innovationlab-3D8BD3)
+
 ![tag:hackathon](https://img.shields.io/badge/hackathon-5F43F1)
 
 # Logistics Agent: AI-Powered Delivery Planning and Incident Reporting
