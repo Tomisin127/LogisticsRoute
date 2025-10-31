@@ -16,7 +16,6 @@ The *Logistics Agent* is an AI-powered assistant designed for logistics and supp
 2. *Report Route Incidents*: Log issues on a route with severity and notes (e.g., "Report an issue on the route from NY to CA, severity 3, note Road closure").
 3. *List Shipments*: Retrieve a history of planned shipments with IDs, routes, weights, costs, and timestamps (e.g., "List shipments").
 4. 
-![1001235552](https://github.com/user-attachments/assets/8b3c8384-4669-415b-8c8a-3f512e4383d2)
 
 ## Capabilities and APIs
 The Logistics Agent offers the following major functions:
