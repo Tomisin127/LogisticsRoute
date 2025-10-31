@@ -6,6 +6,7 @@ Logistics Route: An AI-powered agent for logistics and supply chain management, 
 
 ![tag:hackathon](https://img.shields.io/badge/hackathon-5F43F1)
 
+
 # Logistics Agent: AI-Powered Delivery Planning and Incident Reporting
 
 ## Description
@@ -15,7 +16,6 @@ The *Logistics Agent* is an AI-powered assistant designed for logistics and supp
 1. *Plan a Delivery*: Request a delivery plan with details like distance, estimated time, cost, and CO₂ emissions (e.g., "Arrange a delivery from New York to Los Angeles").
 2. *Report Route Incidents*: Log issues on a route with severity and notes (e.g., "Report an issue on the route from NY to CA, severity 3, note Road closure").
 3. *List Shipments*: Retrieve a history of planned shipments with IDs, routes, weights, costs, and timestamps (e.g., "List shipments").
-4. 
 
 ## Capabilities and APIs
 The Logistics Agent offers the following major functions:
@@ -32,8 +32,7 @@ The Logistics Agent offers the following major functions:
   - *Input*: None.
   - *Output*: List of stored shipments with IDs, routes, weights, costs, and timestamps, or "No shipments found."
   - Example: "List shipments" retrieves all past delivery plans.
-  -
-  
+
 ### Input Data Model
 python
 class PlanDeliveryRequest(Model):
@@ -48,7 +47,7 @@ class ReportIncidentRequest(Model):
     destination: str    # e.g., "CA"
     severity: int       # default: 1
     note: str           # default: ""
-    
+
 # List Shipments requires no input parameters
 
 Output Data Modelpython
@@ -74,14 +73,10 @@ class ListShipmentsResponse(Model):
     shipments: List[Shipment]  # List of shipment objects or empty list
     # Shipment: {id: str, origin: str, dest: str, weight_kg: float, cost_usd: float, ts: str}
 
-
-
 Interaction ModesDirect Message: Send commands via Agentverse messages to the agent’s address: agent1qg9xyclyvxcmkrjp0qm6lcjdsh23wm86dcampwm7gucqjrdjyyxpg36trgx.
 Supported Commands:Plan Delivery: "Arrange a delivery from [origin] to [destination]", e.g., "Plan delivery from NY to CA" or "Schedule shipping from New York to Los Angeles with 500kg of perishable cargo".
 Report Incident: "Report an issue on the route from [origin] to [destination]", e.g., "Report incident from NY to CA severity 3 note Road closure".
 List Shipments: "List shipments" or "Show me all deliveries".
-
-
 
 Note: The agent uses an LLM to parse natural language, so variations like "ship" or "schedule" are supported. Use US state abbreviations or city names for locations.
 
